@@ -11,24 +11,21 @@ public class Main {
 
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
-        String prueba;
         int opcion;
+        String prueba;
         USUARIO usuario1 = new USUARIO("");
         Pedido pedido1 = new Pedido("");
-        String user, pass, changePass = "123";
         int j = 0, option = 0;
         boolean salir = false, artCheck = false;
-        Date fecha = new Date();
-        SimpleDateFormat timeFormat = new SimpleDateFormat("hh:mm");
 
 
+usuario1.setContraseña("admin");
         for(int i = 0; i < 3; i++){
             System.out.println("Escriba el usuario");
             usuario1.setNombre(sc.nextLine());
             System.out.println("Escriba la contraseña (si es primera vez pruebe admin)");
-            usuario1.setContraseña(sc.nextLine());
-            usuario1.setContraseña("admin");
-            if(usuario1.getContraseña()== usuario1.getContraseña()){
+            prueba = sc.nextLine();
+            if(prueba.equals(usuario1.getContraseña())){
 
             while(!salir){
                 System.out.println("Bienvenido " + usuario1.getNombre());
@@ -45,9 +42,10 @@ public class Main {
                     switch(option){
                         case 1:
                             for(int k = 0; k < 3; k++){
+                                sc.next();
                                 System.out.println("Por seguridad, escriba su contraseña actual:");
-                                usuario1.setContraseña(sc.nextLine());
-                                if(usuario1.getContraseña() == usuario1.getContraseña()){
+                                prueba = sc.nextLine();
+                                if(prueba.equals(usuario1.getContraseña())){
                                     System.out.println("Escriba su nueva contraseña:");
                                     usuario1.setContraseña(sc.nextLine());
                                     break;
