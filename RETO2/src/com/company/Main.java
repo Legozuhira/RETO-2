@@ -41,7 +41,8 @@ usuario1.setContraseña("admin");
 
                     switch(option){
                         case 1:
-                            for(int k = 0; k < 3; k++){
+
+                            {
                                 sc.next();
                                 System.out.println("Por seguridad, escriba su contraseña actual:");
                                 prueba = sc.nextLine();
